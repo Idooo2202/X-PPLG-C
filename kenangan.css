@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: black;
+    width: 100%;
+    min-height: 1200px;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container::after {
+    content: '';
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    top: 944px;
+    left: 0;
+    pointer-events: none;
+    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 20%, rgb(255, 255, 255, 0) 100%);
+}
+
+.board-container {
+    width: 90%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(195, 147, 14);
+    box-shadow: 0 0 40px;
+}
+.black-board {
+    width: 98%;
+    height: 96%;
+    background-image: url(black-board.jpg);
+}
+.black-board::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+/* kertas foto start*/
+.kertas {
+    height: 220px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 35px;
+
+    background-image: url(kertas.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 1s ease;
+}
+.kertas:hover{
+    transform: scale(1.05);
+}
+.kertas img {
+    margin-top: 10px;
+    max-width: 90%;
+    box-shadow: 0 0 25px;
+}
+
+/* kertas foto end */
+
+/* posisi foto start */
+.foto1 {
+    position: relative;
+    top: -150px;
+    left: 50px;
+    rotate: 20deg;
+}
+.foto2 {
+    position: relative;
+    top: -100px;
+    left: 250px;
+    rotate: -20deg;
+}
+.foto3   {
+    position: relative;
+    top: -60px;
+    left: 50px;
+    rotate: 20deg;
+}
+.foto4 {
+    position: relative;
+    top: -650px;
+    left: 700px;
+}
+.foto5 {
+    position: relative;
+    top: -680px;
+    left: 550px;
+    rotate: 20deg;
+}
+.foto6   {
+    position: relative;
+    top: -700px;
+    left: 750px;
+    rotate: -20deg;
+}
+.foto7 {
+    position: relative;
+    top: -1460px;
+    left: 1200px;
+    rotate: -30deg;
+}
+.foto8 {
+    position: relative;
+    top: -1400px;
+    left: 1100px;
+    rotate: 20deg;
+}
+.foto9   {
+    position: relative;
+    top: -1400px;
+    left: 1250px;
+    rotate: -30deg;
+}
+
+.judul-album {
+    font-family: 'poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 30px;   /* jarak dari atas papan */
+    margin-bottom: 50px; /* jarak dengan foto */
+    position: relative;  /* biar tetap ikut flow */
+    z-index: 5;          /* biar gak ketutup overlay */
+}
+
+.judul-album h3 {
+    font-size: 70px;
+}
+.judul-album span {
+    color: rgb(195, 147, 14);
+    padding: 0 15px;
+}
+/* posisi foto end */
+.kembali a{
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    background: rgb(195, 147, 14);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    color: black;
+    font-weight: 700;
+    gap: 13px;
+    transition: 1s ease;
+}
+.kembali a:hover{
+    transform: scale(1.1);
+    border: 2px solid rgb(255, 187, 0);
+    box-shadow: 0 0 30px rgb(255, 187, 0);
+}
+
+.tengah {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* responsive screen */
+@media (max-width: 768px) {
+    body {
+        min-height: 1000px;
+    }
+    .board-container {
+        padding: 10px;
+        height: 700px;
+    }
+    .black-board {
+        gap: 15px;
+    }
+    .kertas {
+        width: 42%;
+        height: 16%;
+    }
+    .judul-album h3 {
+        font-size: 28px;
+        top: 0px;
+    }
+
+    .foto1 {
+        top: -40px;
+        left: 23px;
+    }
+    .foto2 {
+        top: -140px;
+        left: 180px;
+    }
+    .foto3 {
+        top: -150px;
+        left: 20px;
+        rotate: 8deg;
+    }
+    .foto4 {
+        top: -230px;
+        left: 155px;
+        rotate: 30deg;
+    }
+    .foto5 {
+        top: -250px;
+        left: 20px;
+        rotate: -28deg;
+    }
+    .foto6 {
+        top: -350px;
+        left: 190px;
+        rotate: -15deg;
+    }
+    .foto7 {
+        top: -362px;
+        left: 10px;
+        rotate: 15deg;
+    }
+    .foto8 {
+        top: -450px;
+        left: 170px;
+        rotate: 24deg;
+    }
+    .foto9 {
+        top: -470px;
+        left: 80px;
+        rotate: -10deg;
+    }
+}
+
+@media (max-width: 480px) {
+    .kertas {
+        width: 38%;
+    }
+    .judul-album h3 {
+        font-size: 50px;
+    }
+}
